@@ -1,0 +1,45 @@
+//NUMBER GAME
+
+
+import java.util.Scanner;
+public class task1 {
+    
+    public static void main(String[] args) {
+    Scanner sc= new Scanner (System.in);
+    int number=(int) (Math.random()*100);
+    int flag= 0;
+for(int i=0;i<5;i++){
+    System.out.println("guess the number:");
+    int usernumber= sc.nextInt();
+
+if(usernumber==number){
+    System.out.println("yayy! this the correct  number");
+    flag=1;
+}
+
+else if(usernumber>number){
+    System.out.println("oops! the correct number is too low");
+}
+
+else if(usernumber==0){
+    System.out.println("the correct no is\n" + number );
+    flag=1;
+    break;
+
+}
+
+else{
+    System.out.println("oops! the correct number is too high");
+}
+
+
+}
+
+if(flag!=1){
+    System.out.println("you are out of attempts   ");
+    System.out.println("the correct no is" + number);
+}
+    }
+
+}
+ 
