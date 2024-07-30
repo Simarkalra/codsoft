@@ -1,0 +1,57 @@
+//STUDENT GRADE CALCULATOR
+import java.util.Scanner;
+import java.util.Arrays;
+public class task2 {
+
+
+    public static int totalmarks(int[] arr,int index,int n){
+        
+        if(index==n-1){
+            return 0;
+        }
+
+    int total=  arr[index]+totalmarks(arr,index+1,n);
+    return total;
+    }
+
+
+    public static int avgpercentage(int[] marks,int index,int n ){
+        int avg;
+        avg=totalmarks(marks,0,5);
+        avg=avg/5;
+        return avg;
+    }
+    public static void grade(int[] marks,int index,int n ){
+        if(avgpercentage(marks,0,5)>90){
+            System.out.println("A");
+        }
+        else if(avgpercentage(marks,0,5)>80){
+            System.out.println("B");
+        }
+        else if(avgpercentage(marks,0,5)>70){
+            System.out.println("C");
+        }
+        else if(avgpercentage(marks,0,5)>60){
+            System.out.println("D");
+        }
+        else{
+            System.out.println("E");
+        }
+        
+    }
+
+    public static void main(String[] args) {
+        int[] marks = new int[5];
+        Scanner sc= new Scanner(System.in);
+        System.out.println("enter the marks of all subject out of 100");
+
+        for(int i=0;i<5;i++){
+            marks[i]=sc.nextInt();
+        }
+
+        System.out.println("Total marks=" +totalmarks(marks,0,5));
+        System.out.println("average percentage=" +avgpercentage( marks,0,5)+"%");
+        grade(marks,0,5 );
+         
+    }
+}
