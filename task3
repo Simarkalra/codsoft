@@ -1,0 +1,62 @@
+// ATM INTERFACE
+import java.util.Scanner;
+public class task3 {
+    public static void  checkbalance(int balance){
+   System.out.println("current balance:" +balance);
+    }
+
+    public static int withdraw(int balance,int withdraw){
+        if(balance>=withdraw){
+        balance= balance-withdraw;
+        System.out.println("withdraw amount: "+ withdraw);
+        System.out.println("amount left: "+balance);
+        System.out.println("amount has been withdraw succsefully");
+        
+        }
+        else{
+            System.out.println("not enough balance");
+        }
+        return balance;
+    }
+    public static int deposit(int balance,int deposit){
+        balance= balance + deposit;
+        System.out.println("deposited amount: "+ deposit);
+        System.out.println("current balance: "+balance);
+        System.out.println("amount has been credited succesfully");
+        return balance;
+    }
+    public static void main(String[] args) {
+        
+    
+    Scanner sc= new Scanner(System.in);
+int balance, deposit,withdraw;
+    balance=1000;//such that user have a current account balance of rs1000.
+    System.out.println("    ATM INTERFACE    ");
+    System.out.println("1- Deposit amount");
+    System.out.println("2- Withdraw amount");
+    System.out.println("3- Check Balance");
+    System.out.println("choose any of the option");
+    int option= sc.nextInt();
+    switch(option){
+        case 1:
+        System.out.println("enter the amount to be deposited");
+        deposit=sc.nextInt();
+       balance= deposit(balance,deposit);
+       break;
+       
+
+    
+    case 2:
+    System.out.println("enter the amount to be withdraw");
+        withdraw=sc.nextInt();
+      balance= withdraw(balance,withdraw);
+       break;
+
+
+
+    case 3:
+    System.out.println("the current balance is");
+    checkbalance(balance);
+    }
+}
+}
