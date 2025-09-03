@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class task1 {
     
     public static void main(String[] args) {
+        System.out.println("simar");
     Scanner sc= new Scanner (System.in);
     int number=(int) (Math.random()*100);
     int flag= 0;
